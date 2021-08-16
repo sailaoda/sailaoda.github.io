@@ -1,8 +1,8 @@
-title: Hexo
-subtitle: "A fast, simple & powerful blog framework powered by Node.js."
-description: "Hexo is a fast, simple & powerful blog framework powered by Node.js."
-author: Hexo
-language: en
+title: Sailaoda
+subtitle: "明月不归沉碧海，白云愁色满苍梧"
+description: "我知这世界，如露水版短暂，然而然而"
+author: wuyesai
+language: zh-CN
 timezone: UTC
 
 url: https://hexo.io
@@ -17,11 +17,12 @@ pretty_urls:
   trailing_index: false
   trailing_html: false
 
-theme: navy
+theme: butterfly
 
 highlight:
   enable: true
   line_number: false
+
 
 disqus_shortname: hexojs
 google_analytics: UA-48498357-3
@@ -37,4 +38,11 @@ algolia:
     api_key: cdea7d4e47d84f6145b77e7f68689f35
     index_name: hexo_zh-cn
 twitter: hexojs
-github: hexojs/hexo
+github: sailaoda/sailaoda.github.io
+
+# Deployment
+## Docs: https://hexo.io/docs/one-command-deployment
+deploy: 
+  type: 'git'
+  repo: git@github.com/sailaoda/sailaoda.github.io.git
+  branch: master
