@@ -1,0 +1,494 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>破解工具及壳的介绍及常用的方法 | 赛 の 任意门</title><meta name="keywords" content="脱壳破解"><meta name="author" content="hackerwu"><meta name="copyright" content="hackerwu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="壳是出于程序作者想对程序资源进行压缩或注册保护的目的，把壳大致分为压缩壳和加密壳两种。顾名思义，压缩壳只是为了减小程序体积对资源进行压缩，加密壳是程序输入表等等进行加密保护。当然加密壳的保护能力要强得多！">
+<meta property="og:type" content="article">
+<meta property="og:title" content="破解工具及壳的介绍及常用的方法">
+<meta property="og:url" content="http://hackerwu.cn/2021/08/28/%E7%A0%B4%E8%A7%A3%E5%B7%A5%E5%85%B7%E5%8F%8A%E5%A3%B3%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%B8%B8%E7%94%A8%E7%9A%84%E6%96%B9%E6%B3%95/index.html">
+<meta property="og:site_name" content="赛 の 任意门">
+<meta property="og:description" content="壳是出于程序作者想对程序资源进行压缩或注册保护的目的，把壳大致分为压缩壳和加密壳两种。顾名思义，压缩壳只是为了减小程序体积对资源进行压缩，加密壳是程序输入表等等进行加密保护。当然加密壳的保护能力要强得多！">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://hackerwu.cn/img/bg/11.png">
+<meta property="article:published_time" content="2021-08-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-09-02T05:16:52.177Z">
+<meta property="article:author" content="hackerwu">
+<meta property="article:tag" content="脱壳破解">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://hackerwu.cn/img/bg/11.png"><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/sailaoda/sai_img//img/3/1.jpg"><link rel="canonical" href="http://hackerwu.cn/2021/08/28/%E7%A0%B4%E8%A7%A3%E5%B7%A5%E5%85%B7%E5%8F%8A%E5%A3%B3%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%B8%B8%E7%94%A8%E7%9A%84%E6%96%B9%E6%B3%95/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="baidu-site-verification" content="code-PSRFI2eFDy"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?https://hm.baidu.com/hm.js?15914aea3434d71351b25e4c9924c0a9";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-5EKRNM989R"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-5EKRNM989R');
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":30,"position":"top","messagePrev":"亲亲，现在距离上次更新已经过了","messageNext":"天，文章的内容现在可能有些出入了。"},
+  highlight: {"plugin":"prismjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: hackerwu","link":"链接: ","source":"来源: 赛 の 任意门","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"top-right"},
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isanchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '破解工具及壳的介绍及常用的方法',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-09-02 13:16:52'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    document.addEventListener('pjax:complete', detectApple)})(window)</script><link rel="stylesheet" href="/css/custom.css"  media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/font.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.6/css/swiper.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-butterfly-swiper/lib/swiperstyle.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-filter-gitcalendar/lib/gitcalendar.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/l-lin/font-awesome-animation/dist/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.min.css" media="defer" onload="this.media='all'"><script async src="https://cdn.jsdelivr.net/npm/hexo-butterfly-tag-plugins-plus@latest/lib/carousel-touch.min.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://cdn.jsdelivr.net/gh/sailaoda/sai_img//img/3/1.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">59</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">18</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">24</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 微首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw iconfont icon-xueshujiangzuo"></i><span> 微总结</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E6%80%9D%E8%80%83%E6%80%BB%E7%BB%93/Golang%E9%9D%A2%E8%AF%95%E9%A2%98%E6%95%B4%E7%90%86/"><i class="fa-fw iconfont icon-heiban"></i><span> Golang面试题汇总</span></a></li><li><a class="site-page child" href="/categories/%E6%80%9D%E8%80%83%E6%80%BB%E7%BB%93/LeetCode%E5%88%B7%E9%A2%98%E5%89%91%E6%8C%87Offer/"><i class="fa-fw iconfont icon-suanfa6"></i><span> LeetCode刷题剑指Offer</span></a></li><li><a class="site-page child" href="/categories/ACwing%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/"><i class="fa-fw iconfont icon-suanfa"></i><span> ACwing算法笔记</span></a></li><li><a class="site-page child" href="/categories/%E6%80%9D%E8%80%83%E6%80%BB%E7%BB%93/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/"><i class="fa-fw iconfont icon-kejichuangye"></i><span> 面试准备</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw iconfont icon-heike1"></i><span> 微笔记</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/Golang/Golang%E5%AD%A6%E4%B9%A0/"><i class="fa-fw iconfont icon-icon-golang"></i><span> Golang学习</span></a></li><li><a class="site-page child" href="/categories/%E4%BA%91%E5%8E%9F%E7%94%9F-%E5%88%86%E5%B8%83%E5%BC%8F-%E5%BE%AE%E6%9C%8D%E5%8A%A1/"><span> 云原生-分布式-微服务</span></a></li><li><a class="site-page child" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93andNosql%E6%95%B0%E6%8D%AE%E5%BA%93andLinux%E8%BF%90%E7%BB%B4/"><i class="fa-fw iconfont icon-ziyuan"></i><span> 数据库+Nosql数据库+Linux运维</span></a></li><li><a class="site-page child" href="/categories/KaliLinux/Kali%E6%B8%97%E9%80%8F%E7%AC%94%E8%AE%B0/"><i class="fa-fw iconfont icon-heike4"></i><span> Kali渗透笔记</span></a></li><li><a class="site-page child" href="/categories/PHP%E5%AD%A6%E4%B9%A0/"><i class="fa-fw iconfont icon-php"></i><span> PHP学习</span></a></li><li><a class="site-page child" href="/categories/365%E7%AE%97%E6%B3%95%E7%89%B9%E8%AE%AD%E8%90%A5/"><i class="fa-fw iconfont icon-suanfa1"></i><span> 365算法特训营</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw iconfont icon-a-golangicon"></i><span> 微项目</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/Golang/Go%E8%AF%AD%E8%A8%80%E5%AE%9E%E6%88%98%E6%B5%81%E5%AA%92%E4%BD%93%E8%A7%86%E9%A2%91%E7%BD%91%E7%AB%99/"><i class="fa-fw iconfont icon-liumeiti"></i><span> Go语言实战流媒体视频网站</span></a></li><li><a class="site-page child" href="/categories/Golang/Go%E7%89%88%E7%88%AC%E8%99%AB/"><i class="fa-fw iconfont icon-shentouceshi"></i><span> Go版爬虫</span></a></li><li><a class="site-page child" href="/categories/Golang/Go%E5%AE%9E%E6%88%98%E4%BB%BF%E7%99%BE%E5%BA%A6%E4%BA%91%E7%9B%98%20%E5%AE%9E%E7%8E%B0%E4%BC%81%E4%B8%9A%E7%BA%A7%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%91%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F/"><i class="fa-fw iconfont icon-fenbushicunchu1"></i><span> Go实战仿百度云盘 实现企业级分布式云存储系统</span></a></li><li><a class="site-page child" href="/categories/Golang/%E5%9F%BA%E4%BA%8EGolang%E5%8D%8F%E7%A8%8B%E5%AE%9E%E7%8E%B0%E6%B5%81%E9%87%8F%E7%BB%9F%E8%AE%A1%E7%B3%BB%E7%BB%9F/"><i class="fa-fw iconfont icon-liuliangtongji1"></i><span> 基于Golang协程实现流量统计系统</span></a></li><li><a class="site-page child" href="/categories/Golang/%E5%85%A8%E6%B5%81%E7%A8%8B%E5%BC%80%E5%8F%91%20GO%E5%AE%9E%E6%88%98%E7%94%B5%E5%95%86%E7%BD%91%E7%AB%99%E9%AB%98%E5%B9%B6%E5%8F%91%E7%A7%92%E6%9D%80%E7%B3%BB%E7%BB%9F/"><i class="fa-fw iconfont icon-gaobingfaxitong"></i><span> 全流程开发 GO实战电商网站高并发秒杀系统</span></a></li><li><a class="site-page child" href="/categories/Golang/Zinx--Golang%E8%BD%BB%E9%87%8F%E7%BA%A7%E6%9C%8D%E5%8A%A1%E5%99%A8/"><i class="fa-fw iconfont icon-fuwuqi1"></i><span> Zinx--Golang轻量级服务器</span></a></li><li><a class="site-page child" href="/categories/Golang/Docker+Kubernetes(k8s)%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%AE%B9%E5%99%A8%E5%8C%96%E5%AE%9E%E8%B7%B5/"><i class="fa-fw iconfont icon-bianzu18"></i><span> Docker+Kubernetes(k8s)微服务容器化实践</span></a></li><li><a class="site-page child" href="/categories/Golang/Go+%E5%8C%BA%E5%9D%97%E9%93%BE%E6%B7%B1%E5%BA%A6%E5%AE%9E%E6%88%98/"><i class="fa-fw iconfont icon-qukuailian2"></i><span> Go+区块链深度实战</span></a></li><li><a class="site-page child" href="/categories/Golang/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84%E5%AE%9E%E6%88%98160%E8%AE%B2/"><i class="fa-fw iconfont icon-weifuwu-copy"></i><span> 微服务架构实战160讲</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw iconfont icon-jishuzhuanyi"></i><span> 微底层</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/"><i class="fa-fw iconfont icon-suanfa1"></i><span> 汇编语言</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw iconfont icon-tongzhigonggao"></i><span> 微分类</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/shuoshuo/"><i class="fa-fw fas fa-comments"></i><span> 碎碎念</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw iconfont icon-xuesheng"></i><span> 我</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="fa-fw iconfont icon-wode"></i><span> 关于我</span></a></li><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> 微相册</span></a></li><li><a class="site-page child" href="/link/"><i class="fa-fw iconfont icon-youqinglianjie"></i><span> 网站</span></a></li><li><a class="site-page child" href="/messageboard/"><i class="fa-fw fas fa-paper-plane"></i><span> 留言板</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">赛 の 任意门</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 微首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw iconfont icon-xueshujiangzuo"></i><span> 微总结</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E6%80%9D%E8%80%83%E6%80%BB%E7%BB%93/Golang%E9%9D%A2%E8%AF%95%E9%A2%98%E6%95%B4%E7%90%86/"><i class="fa-fw iconfont icon-heiban"></i><span> Golang面试题汇总</span></a></li><li><a class="site-page child" href="/categories/%E6%80%9D%E8%80%83%E6%80%BB%E7%BB%93/LeetCode%E5%88%B7%E9%A2%98%E5%89%91%E6%8C%87Offer/"><i class="fa-fw iconfont icon-suanfa6"></i><span> LeetCode刷题剑指Offer</span></a></li><li><a class="site-page child" href="/categories/ACwing%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/"><i class="fa-fw iconfont icon-suanfa"></i><span> ACwing算法笔记</span></a></li><li><a class="site-page child" href="/categories/%E6%80%9D%E8%80%83%E6%80%BB%E7%BB%93/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/"><i class="fa-fw iconfont icon-kejichuangye"></i><span> 面试准备</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw iconfont icon-heike1"></i><span> 微笔记</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/Golang/Golang%E5%AD%A6%E4%B9%A0/"><i class="fa-fw iconfont icon-icon-golang"></i><span> Golang学习</span></a></li><li><a class="site-page child" href="/categories/%E4%BA%91%E5%8E%9F%E7%94%9F-%E5%88%86%E5%B8%83%E5%BC%8F-%E5%BE%AE%E6%9C%8D%E5%8A%A1/"><span> 云原生-分布式-微服务</span></a></li><li><a class="site-page child" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93andNosql%E6%95%B0%E6%8D%AE%E5%BA%93andLinux%E8%BF%90%E7%BB%B4/"><i class="fa-fw iconfont icon-ziyuan"></i><span> 数据库+Nosql数据库+Linux运维</span></a></li><li><a class="site-page child" href="/categories/KaliLinux/Kali%E6%B8%97%E9%80%8F%E7%AC%94%E8%AE%B0/"><i class="fa-fw iconfont icon-heike4"></i><span> Kali渗透笔记</span></a></li><li><a class="site-page child" href="/categories/PHP%E5%AD%A6%E4%B9%A0/"><i class="fa-fw iconfont icon-php"></i><span> PHP学习</span></a></li><li><a class="site-page child" href="/categories/365%E7%AE%97%E6%B3%95%E7%89%B9%E8%AE%AD%E8%90%A5/"><i class="fa-fw iconfont icon-suanfa1"></i><span> 365算法特训营</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw iconfont icon-a-golangicon"></i><span> 微项目</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/Golang/Go%E8%AF%AD%E8%A8%80%E5%AE%9E%E6%88%98%E6%B5%81%E5%AA%92%E4%BD%93%E8%A7%86%E9%A2%91%E7%BD%91%E7%AB%99/"><i class="fa-fw iconfont icon-liumeiti"></i><span> Go语言实战流媒体视频网站</span></a></li><li><a class="site-page child" href="/categories/Golang/Go%E7%89%88%E7%88%AC%E8%99%AB/"><i class="fa-fw iconfont icon-shentouceshi"></i><span> Go版爬虫</span></a></li><li><a class="site-page child" href="/categories/Golang/Go%E5%AE%9E%E6%88%98%E4%BB%BF%E7%99%BE%E5%BA%A6%E4%BA%91%E7%9B%98%20%E5%AE%9E%E7%8E%B0%E4%BC%81%E4%B8%9A%E7%BA%A7%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%91%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F/"><i class="fa-fw iconfont icon-fenbushicunchu1"></i><span> Go实战仿百度云盘 实现企业级分布式云存储系统</span></a></li><li><a class="site-page child" href="/categories/Golang/%E5%9F%BA%E4%BA%8EGolang%E5%8D%8F%E7%A8%8B%E5%AE%9E%E7%8E%B0%E6%B5%81%E9%87%8F%E7%BB%9F%E8%AE%A1%E7%B3%BB%E7%BB%9F/"><i class="fa-fw iconfont icon-liuliangtongji1"></i><span> 基于Golang协程实现流量统计系统</span></a></li><li><a class="site-page child" href="/categories/Golang/%E5%85%A8%E6%B5%81%E7%A8%8B%E5%BC%80%E5%8F%91%20GO%E5%AE%9E%E6%88%98%E7%94%B5%E5%95%86%E7%BD%91%E7%AB%99%E9%AB%98%E5%B9%B6%E5%8F%91%E7%A7%92%E6%9D%80%E7%B3%BB%E7%BB%9F/"><i class="fa-fw iconfont icon-gaobingfaxitong"></i><span> 全流程开发 GO实战电商网站高并发秒杀系统</span></a></li><li><a class="site-page child" href="/categories/Golang/Zinx--Golang%E8%BD%BB%E9%87%8F%E7%BA%A7%E6%9C%8D%E5%8A%A1%E5%99%A8/"><i class="fa-fw iconfont icon-fuwuqi1"></i><span> Zinx--Golang轻量级服务器</span></a></li><li><a class="site-page child" href="/categories/Golang/Docker+Kubernetes(k8s)%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%AE%B9%E5%99%A8%E5%8C%96%E5%AE%9E%E8%B7%B5/"><i class="fa-fw iconfont icon-bianzu18"></i><span> Docker+Kubernetes(k8s)微服务容器化实践</span></a></li><li><a class="site-page child" href="/categories/Golang/Go+%E5%8C%BA%E5%9D%97%E9%93%BE%E6%B7%B1%E5%BA%A6%E5%AE%9E%E6%88%98/"><i class="fa-fw iconfont icon-qukuailian2"></i><span> Go+区块链深度实战</span></a></li><li><a class="site-page child" href="/categories/Golang/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84%E5%AE%9E%E6%88%98160%E8%AE%B2/"><i class="fa-fw iconfont icon-weifuwu-copy"></i><span> 微服务架构实战160讲</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw iconfont icon-jishuzhuanyi"></i><span> 微底层</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/"><i class="fa-fw iconfont icon-suanfa1"></i><span> 汇编语言</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw iconfont icon-tongzhigonggao"></i><span> 微分类</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/shuoshuo/"><i class="fa-fw fas fa-comments"></i><span> 碎碎念</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw iconfont icon-xuesheng"></i><span> 我</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="fa-fw iconfont icon-wode"></i><span> 关于我</span></a></li><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> 微相册</span></a></li><li><a class="site-page child" href="/link/"><i class="fa-fw iconfont icon-youqinglianjie"></i><span> 网站</span></a></li><li><a class="site-page child" href="/messageboard/"><i class="fa-fw fas fa-paper-plane"></i><span> 留言板</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">破解工具及壳的介绍及常用的方法</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-08-27T16:00:00.000Z" title="发表于 2021-08-28 00:00:00">2021-08-28</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-09-02T05:16:52.177Z" title="更新于 2021-09-02 13:16:52">2021-09-02</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/hacker%E5%AD%A6%E4%B9%A0/">hacker学习</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/hacker%E5%AD%A6%E4%B9%A0/%E8%84%B1%E5%A3%B3%E7%A0%B4%E8%A7%A3/">脱壳破解</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>3分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="破解工具及壳的介绍及常用的方法"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div><article class="post-content" id="article-container"><h1 id="破解工具及壳的介绍及常用的方法"><a href="#破解工具及壳的介绍及常用的方法" class="headerlink" title="破解工具及壳的介绍及常用的方法"></a>破解工具及壳的介绍及常用的方法</h1><h2 id="一、壳的介绍"><a href="#一、壳的介绍" class="headerlink" title="一、壳的介绍"></a>一、壳的介绍</h2><p>壳是出于程序作者想对程序资源进行压缩或注册保护的目的，把壳大致分为<wavy>压缩壳</wavy>和<wavy>加密壳</wavy>两种。顾名思义，压缩壳只是为了减小程序体积对资源进行压缩，加密壳是程序输入表等等进行加密保护。当然加密壳的保护能力要强得多！</p>
+<h2 id="二、脱壳的流程"><a href="#二、脱壳的流程" class="headerlink" title="二、脱壳的流程"></a>二、脱壳的流程</h2><p>•查壳—-&gt;寻找OEP—-&gt;脱壳/Dump—-&gt;修复</p>
+<details cyan open><summary> 1.查壳 </summary>
+              <div class='content'>
+              <p>•PEID—功能强大的侦壳工具，自带脱壳插件</p><p>•Exeinfo PE - 查壳功能在某些壳上远胜PEID，可以剥离dll</p><p>•Detect it Easy - 可以在加壳的情况下依然看见程序的编程语言</p>
+              </div>
+            </details>
+<details cyan open><summary> 2.寻找OEP </summary>
+              <div class='content'>
+              <p><kbd>F2</kbd>：在需要的地方下断点</p><p><kbd>F3</kbd>：选择打开程序</p><p><kbd>F4</kbd>：运行到所选择的那一行</p><p><kbd>F7</kbd>：单步进入(让call不运行程式)</p><p><kbd>F8</kbd>：单步跟踪</p><p><kbd>F9</kbd>：执行程序（运行程序）</p><p><kbd>Shift</kbd> + <kbd>F9</kbd> ： 与F9相同，但是如果被调试程序发生异常而中止，调试器会首先尝试执行被调试程序指定的异常处理（请参考忽略Kernel32中的内存非法访问）。</p><p><kbd>Alt</kbd> + <kbd>F9</kbd> ： 执行直到返回到用户代码段，跟踪程序直到指令所属于的模块不在系统目录中，在此期间不进入子函数也不更新CPU数据。因为程序是一条一条执行的，所以速度可能会慢一些。按Esc键，可以停止跟踪。</p>
+              </div>
+            </details>
+<details cyan open><summary> 3.脱壳/Dump(LordPE) </summary>
+              <div class='content'>
+              <p>LordPE—选择所调试的进程—右键—完整脱壳</p>
+              </div>
+            </details>
+<details cyan open><summary> 4.修复(ImportREC) </summary>
+              <div class='content'>
+              <p>ImportREC—选择所调试的进程—填写相关的数据信息—进行修复—抓取脱壳文件进行修复</p>
+              </div>
+            </details>
+<h2 id="三、脱壳的方法"><a href="#三、脱壳的方法" class="headerlink" title="三、脱壳的方法"></a>三、脱壳的方法</h2><h3 id="方法一：单步跟踪法"><a href="#方法一：单步跟踪法" class="headerlink" title="方法一：单步跟踪法"></a>方法一：单步跟踪法</h3><ol>
+<li><p>用OD载入，</p>
+</li>
+<li><p>单步向下跟踪（F8），实现向下的跳。也就是说向上的跳不让其实现！</p>
+</li>
+<li><p>遇到程序往回跳的（包括循环），我们在下一句代码处按F4</p>
+</li>
+<li><p>绿色线条表示跳转没实现，不用理会，红色线条表示跳转已经实现！</p>
+</li>
+<li><p>如果刚载入程序，在附近就有一个CALL的，我们就F7跟进去，不然程序很容易跑飞，这样很快就能到程序的OEP</p>
+</li>
+<li><p>在跟踪的时候，如果运行到某个CALL程序就运行的，就在这个CALL中F7进入</p>
+</li>
+<li><p>一般有很大的跳转（大跨段），比如   jmp XXXXXX 或者 JE XXXXXX 或者有RETN的一般很快就会到程序的OEP<strong>。</strong></p>
+</li>
+</ol>
+<h3 id="方法二：ESP定律法"><a href="#方法二：ESP定律法" class="headerlink" title="方法二：ESP定律法"></a>方法二：ESP定律法</h3><ol>
+<li><p>开始就点F8，注意观察OD右上角的寄存器中ESP有没突现（变成红色）。</p>
+</li>
+<li><p>在命令行下：dd XXXXXXXX(指在当前代码中的ESP地址，或者是hr XXXXXXXX)，按回车！</p>
+</li>
+<li><p>选中下断的地址，断点—-&gt;硬件访—-&gt;WORD断点。</p>
+</li>
+<li><p>按一下F9运行程序，直接来到了跳转处，按下F8，到达程序OEP（或OEP附近）。</p>
+</li>
+</ol>
+<h3 id="方法三：内存镜像法"><a href="#方法三：内存镜像法" class="headerlink" title="方法三：内存镜像法"></a>方法三：内存镜像法</h3><ol>
+<li><p>用OD打开软件！</p>
+</li>
+<li><p>点击选项——调试选项——异常，把里面的忽略全部√上！CTRL+F2重载下程序！</p>
+</li>
+<li><p>按ALT+M,打开内存镜象，找到程序的第一个.rsrc.按F2下断点，然后按SHIFT+F9运行到断点，接着再按ALT+M,打开内存镜象，找到程序的第一个.rsrc.上面的.CODE（也就是00401000处），按F2下断点！然后按SHIFT+F9（或者是在没异常情况下按F9），直接到达程序OEP！</p>
+</li>
+</ol>
+<h3 id="方法四：一步到达OEP"><a href="#方法四：一步到达OEP" class="headerlink" title="方法四：一步到达OEP"></a>方法四：一步到达OEP</h3><ol>
+<li><p>开始按Ctrl+F,输入：popad，然后按下F2，F9运行到此处</p>
+</li>
+<li><p>来到大跳转处，点下F8，到达OEP！</p>
+</li>
+</ol>
+<h3 id="方法五：最后一次异常法"><a href="#方法五：最后一次异常法" class="headerlink" title="方法五：最后一次异常法"></a>方法五：最后一次异常法</h3><ol>
+<li><p>用OD打开软件</p>
+</li>
+<li><p>点击选项——调试选项——异常，把里面的√全部去掉！CTRL+F2重载下程序</p>
+</li>
+<li><p>一开始程序就是一个跳转，在这里我们按SHIFT+F9，直到程序运行，记下从开始按SHIFT+F9到程序运行的次数m！</p>
+</li>
+<li><p>CTRL+F2重载程序，按SHIFT+F9（这次按的次数为程序运行的次数m-1次）</p>
+</li>
+<li><p>在OD的右下角我们看见有一个”SE 句柄”，这时我们按CTRL+G，输入SE 句柄前的地址！</p>
+</li>
+<li><p>按F2下断点！然后按SHIFT+F9来到断点处！</p>
+</li>
+<li><p>去掉断点，按F8慢慢向下走！</p>
+</li>
+<li><p>到达程序的OEP！</p>
+</li>
+</ol>
+<h3 id="方法六：模拟跟踪法"><a href="#方法六：模拟跟踪法" class="headerlink" title="方法六：模拟跟踪法"></a>方法六：模拟跟踪法</h3><ol>
+<li><p>先试运行，跟踪一下程序，看有没有SEH暗桩之类</p>
+</li>
+<li><p>ALT+M打开内存镜像，找到（包含=SFX,imports,relocations）</p>
+</li>
+<li><p>地址为0054B000，如是我们在命令行输入tc eip&lt;0054B000,回车，正在跟踪ing。。</p>
+</li>
+</ol>
+<h3 id="方法七：“SFX”法"><a href="#方法七：“SFX”法" class="headerlink" title="方法七：“SFX”法"></a>方法七：“SFX”法</h3><ol>
+<li><p>设置OD，忽略所有异常，也就是说异常选项卡里面都打上勾</p>
+</li>
+<li><p>切换到SFX选项卡，选择“字节模式跟踪实际入口（速度非常慢）”，确定。</p>
+</li>
+<li><p>重载程序（如果跳出是否“压缩代码？”选择“否”，OD直接到达OEP）</p>
+</li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">hackerwu</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://hackerwu.cn/2021/08/28/%E7%A0%B4%E8%A7%A3%E5%B7%A5%E5%85%B7%E5%8F%8A%E5%A3%B3%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%B8%B8%E7%94%A8%E7%9A%84%E6%96%B9%E6%B3%95/">http://hackerwu.cn/2021/08/28/%E7%A0%B4%E8%A7%A3%E5%B7%A5%E5%85%B7%E5%8F%8A%E5%A3%B3%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%B8%B8%E7%94%A8%E7%9A%84%E6%96%B9%E6%B3%95/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://hackerwu.cn" target="_blank">赛 の 任意门</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%84%B1%E5%A3%B3%E7%A0%B4%E8%A7%A3/">脱壳破解</a></div><div class="post_share"><div class="social-share" data-image="/img/bg/11.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button button--animated"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/donate/wechat.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/donate/wechat.jpg" alt="微信金库"/></a><div class="post-qr-code-desc">微信金库</div></li><li class="reward-item"><a href="/img/donate/alipay.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/donate/alipay.jpg" alt="支付宝钱庄"/></a><div class="post-qr-code-desc">支付宝钱庄</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/08/27/hexo%E7%94%9F%E6%88%90%E6%96%87%E7%AB%A0%E6%98%BE%E7%A4%BAundefined%E9%97%AE%E9%A2%98/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/bg/1.jpg" onerror="onerror=null;src='/img/error.gif'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">hexo生成文章显示undefined问题</div></div></a></div><div class="next-post pull-right"><a href="/2021/08/30/kali%E6%B8%97%E9%80%8F%E7%AC%94%E8%AE%B01-kali%E4%BB%8B%E7%BB%8D/"><img class="next-cover" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/bg/kali.png" onerror="onerror=null;src='/img/error.gif'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Kali渗透笔记1-Kali介绍</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div id="comment-switch"><span class="first-comment">Valine</span><span class="switch-btn"></span><span class="second-comment">Gitalk</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A0%B4%E8%A7%A3%E5%B7%A5%E5%85%B7%E5%8F%8A%E5%A3%B3%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%B8%B8%E7%94%A8%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">破解工具及壳的介绍及常用的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%A3%B3%E7%9A%84%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.1.</span> <span class="toc-text">一、壳的介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E8%84%B1%E5%A3%B3%E7%9A%84%E6%B5%81%E7%A8%8B"><span class="toc-number">1.2.</span> <span class="toc-text">二、脱壳的流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E8%84%B1%E5%A3%B3%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">1.3.</span> <span class="toc-text">三、脱壳的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%B8%80%EF%BC%9A%E5%8D%95%E6%AD%A5%E8%B7%9F%E8%B8%AA%E6%B3%95"><span class="toc-number">1.3.1.</span> <span class="toc-text">方法一：单步跟踪法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%BA%8C%EF%BC%9AESP%E5%AE%9A%E5%BE%8B%E6%B3%95"><span class="toc-number">1.3.2.</span> <span class="toc-text">方法二：ESP定律法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%B8%89%EF%BC%9A%E5%86%85%E5%AD%98%E9%95%9C%E5%83%8F%E6%B3%95"><span class="toc-number">1.3.3.</span> <span class="toc-text">方法三：内存镜像法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E5%9B%9B%EF%BC%9A%E4%B8%80%E6%AD%A5%E5%88%B0%E8%BE%BEOEP"><span class="toc-number">1.3.4.</span> <span class="toc-text">方法四：一步到达OEP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%BA%94%EF%BC%9A%E6%9C%80%E5%90%8E%E4%B8%80%E6%AC%A1%E5%BC%82%E5%B8%B8%E6%B3%95"><span class="toc-number">1.3.5.</span> <span class="toc-text">方法五：最后一次异常法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E5%85%AD%EF%BC%9A%E6%A8%A1%E6%8B%9F%E8%B7%9F%E8%B8%AA%E6%B3%95"><span class="toc-number">1.3.6.</span> <span class="toc-text">方法六：模拟跟踪法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%B8%83%EF%BC%9A%E2%80%9CSFX%E2%80%9D%E6%B3%95"><span class="toc-number">1.3.7.</span> <span class="toc-text">方法七：“SFX”法</span></a></li></ol></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2021 By hackerwu</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">欢迎客官来到江湖小站！</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>if (document.getElementsByClassName('mermaid').length) {
+  if (window.mermaidJsLoad) mermaid.init()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(() => {
+      window.mermaidJsLoad = true
+      mermaid.initialize({
+        theme: 'neutral',
+      })
+      true && mermaid.init()
+    })
+  }
+}</script><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'rJxKwWVsRPGJAuJwGPrOc9s7-gzGzoHsz',
+      appKey: 'JEiKrmJvInDI0vxeyvPcDLvn',
+      placeholder: '这位公子/姑娘有什么要对在下说的吗？',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: false,
+      serverURLs: 'https://hackerwu.cn',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: true,
+      path: window.location.pathname,
+      requiredFields: ["nick,mail"],
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script>function addGitalkSource () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= 'https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+}
+
+function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk(Object.assign({
+      clientID: '38e76c2916fc41fe88f7',
+      clientSecret: '1c64c79be0bc590d3a5e52c5d6f11abf2765b36e',
+      repo: 'sailaoda.github.io',
+      owner: 'sailaoda',
+      admin: ['sailaoda'],
+      id: '7cb54a5129bfbecc7d7ba7432f0d8420',
+      language: 'zh-CN',
+      perPage: 10,
+      distractionFreeMode: false,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      updateCountCallback: commentCount
+    },false))
+
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    addGitalkSource()
+    getScript('https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Valine' === 'Gitalk' || !true) {
+  if (true) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script></div><script src="/js/randombg.js"></script><script async src="/js/diytitle.js"></script><script src="/js/cursor.js"></scropt><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js" data-mobile="true" data-text="吃饭,睡觉,学技术,Golang,搞算法" data-fontsize="15px" data-random="true" async="async"></script><script src="//code.tidio.co/cnbgzsgyy85dcz1vwlr5qo0sy2ijojti.js" async="async"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config-diff',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"]):not([href="/shuoshuo/"]):not([href="/about/"]):not([href="pangu"]):not([href="Gitalk"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: true,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.removeEventListener('scroll', window.tocScrollFn)
+  window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', 'G-5EKRNM989R', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script data-pjax>
+                        function butterfly_swiper_injector_config(){
+                          var parent_div_git = document.getElementById('recent-posts');
+                          var item_html = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2021/09/22/1-Golang-面试题整理/" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/cover/mianshi.png" alt=""/></a><div class="blog-slider__content"><span class="blog-slider__code">2021-09-22</span><a class="blog-slider__title" href="2021/09/22/1-Golang-面试题整理/" alt="">Golang 面试题整理</a><div class="blog-slider__text">Golang面试题整理</div><a class="blog-slider__button" href="2021/09/22/1-Golang-面试题整理/" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2021/09/15/go语言实战流媒体视频网站笔记2：一个例子了解golang工具链/" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/cover/goliu.jpg" alt=""/></a><div class="blog-slider__content"><span class="blog-slider__code">2021-09-15</span><a class="blog-slider__title" href="2021/09/15/go语言实战流媒体视频网站笔记2：一个例子了解golang工具链/" alt="">Go语言实战流媒体视频网站笔记2：一个例子了解Golang工具链</a><div class="blog-slider__text">通过一个简单的webservice具体从Golang的工具链，到test，全面介绍Golang在工程项目里需要掌握的知识点。</div><a class="blog-slider__button" href="2021/09/15/go语言实战流媒体视频网站笔记2：一个例子了解golang工具链/" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2021/08/20/安装nvm后无npm导致无法安装gitbook解决办法/" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/cover/3.png" alt=""/></a><div class="blog-slider__content"><span class="blog-slider__code">2021-08-20</span><a class="blog-slider__title" href="2021/08/20/安装nvm后无npm导致无法安装gitbook解决办法/" alt="">安装nvm后无npm导致无法安装GitBook解决办法</a><div class="blog-slider__text">nvm里面node版本导致的一系列问题，基本上都在这里了。</div><a class="blog-slider__button" href="2021/08/20/安装nvm后无npm导致无法安装gitbook解决办法/" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2021/10/07/1-启动LeetCode刷题计划/" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/cover/leetcode.png" alt=""/></a><div class="blog-slider__content"><span class="blog-slider__code">2021-10-07</span><a class="blog-slider__title" href="2021/10/07/1-启动LeetCode刷题计划/" alt="">LeetCode刷题剑指Offer</a><div class="blog-slider__text">剑指Offer计划</div><a class="blog-slider__button" href="2021/10/07/1-启动LeetCode刷题计划/" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2021/09/13/go语言学习笔记9：面向对象-上）/" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="img/cover/go.jpg" alt=""/></a><div class="blog-slider__content"><span class="blog-slider__code">2021-09-13</span><a class="blog-slider__title" href="2021/09/13/go语言学习笔记9：面向对象-上）/" alt="">Golang学习笔记9：面向对象(上）</a><div class="blog-slider__text">Golang的面向对象特性</div><a class="blog-slider__button" href="2021/09/13/go语言学习笔记9：面向对象-上）/" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2021/09/22/1-ACwing题库刷题/" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/cover/laptop.png" alt=""/></a><div class="blog-slider__content"><span class="blog-slider__code">2021-09-22</span><a class="blog-slider__title" href="2021/09/22/1-ACwing题库刷题/" alt="">ACwing题库刷题</a><div class="blog-slider__text">ACwing刷题总结</div><a class="blog-slider__button" href="2021/09/22/1-ACwing题库刷题/" alt="">详情   </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+                          console.log('已挂载butterfly_swiper')
+                          // parent_div_git.innerHTML=item_html+parent_div_git.innerHTML // 无报错，但不影响使用(支持pjax跳转)
+                          parent_div_git.insertAdjacentHTML("afterbegin",item_html) // 有报错，但不影响使用(支持pjax跳转)
+                          }
+                        if( document.getElementById('recent-posts') && (location.pathname ==='all'|| 'all' ==='all')){
+                        butterfly_swiper_injector_config()
+                        }
+                      </script><script defer src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.6/js/swiper.min.js"></script><script defer data-pjax src="https://cdn.jsdelivr.net/npm/hexo-butterfly-swiper/lib/swiper_init.js"></script><script data-pjax src="https://cdn.jsdelivr.net/npm/hexo-filter-gitcalendar/lib/gitcalendar.js"></script><script data-pjax>
+                        function gitcalendar_injector_config(){
+                          var parent_div_git = document.getElementById('recent-posts');
+                          var item_html = '<div class="recent-post-item" style="width:100%;height:auto;padding:10px;"><style>#git_container{min-height: 280px}@media screen and (max-width:650px) {#git_container{min-height: 0px}}</style><div id="git_loading" style="width:10%;height:100%;margin:0 auto;display: block;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animatetransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animatetransform></path></svg><style>#git_container{display: none;}</style></div><div id="git_container"></div></div>';
+                          parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+                          console.log('已挂载gitcalendar')
+                          }
+
+                        if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+                            gitcalendar_injector_config()
+                            GitCalendarInit("https://gitcalendar.akilar.top/api?sailaoda",['#ebedf0', '#fdcdec', '#fc9bd9', '#fa6ac5', '#f838b2', '#f5089f', '#c4067e', '#92055e', '#540336', '#48022f', '#30021f'],'sailaoda')
+                        }
+                      </script><script async src="https://at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/01/assets/haru01.model.json"},"display":{"superSample":2,"position":"left","width":200,"height":400,"hOffset":0,"vOffset":0},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2,"opacity":0.95},"dialog":{"enable":false,"hitokoto":true},"log":false});</script></body></html>

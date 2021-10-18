@@ -1,0 +1,470 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>PHP学习1：环境搭建 | 赛 の 任意门</title><meta name="keywords" content="PHP"><meta name="author" content="hackerwu"><meta name="copyright" content="hackerwu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="关于PHP学习开发环境的搭建步骤">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP学习1：环境搭建">
+<meta property="og:url" content="http://hackerwu.cn/2021/09/03/PHP%E5%AD%A6%E4%B9%A01%EF%BC%9A%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.html">
+<meta property="og:site_name" content="赛 の 任意门">
+<meta property="og:description" content="关于PHP学习开发环境的搭建步骤">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://hackerwu.cn/img/cover/php1.png">
+<meta property="article:published_time" content="2021-09-02T16:13:56.000Z">
+<meta property="article:modified_time" content="2021-09-19T02:14:00.449Z">
+<meta property="article:author" content="hackerwu">
+<meta property="article:tag" content="PHP">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://hackerwu.cn/img/cover/php1.png"><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/sailaoda/sai_img//img/3/1.jpg"><link rel="canonical" href="http://hackerwu.cn/2021/09/03/PHP%E5%AD%A6%E4%B9%A01%EF%BC%9A%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="baidu-site-verification" content="code-PSRFI2eFDy"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?https://hm.baidu.com/hm.js?15914aea3434d71351b25e4c9924c0a9";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-5EKRNM989R"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-5EKRNM989R');
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":30,"position":"top","messagePrev":"亲亲，现在距离上次更新已经过了","messageNext":"天，文章的内容现在可能有些出入了。"},
+  highlight: {"plugin":"prismjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: hackerwu","link":"链接: ","source":"来源: 赛 の 任意门","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"top-right"},
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isanchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'PHP学习1：环境搭建',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-09-19 10:14:00'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    document.addEventListener('pjax:complete', detectApple)})(window)</script><link rel="stylesheet" href="/css/custom.css"  media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/font.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.6/css/swiper.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-butterfly-swiper/lib/swiperstyle.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-filter-gitcalendar/lib/gitcalendar.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/l-lin/font-awesome-animation/dist/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.min.css" media="defer" onload="this.media='all'"><script async src="https://cdn.jsdelivr.net/npm/hexo-butterfly-tag-plugins-plus@latest/lib/carousel-touch.min.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://cdn.jsdelivr.net/gh/sailaoda/sai_img//img/3/1.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">59</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">18</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">24</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 微首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw iconfont icon-xueshujiangzuo"></i><span> 微总结</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E6%80%9D%E8%80%83%E6%80%BB%E7%BB%93/Golang%E9%9D%A2%E8%AF%95%E9%A2%98%E6%95%B4%E7%90%86/"><i class="fa-fw iconfont icon-heiban"></i><span> Golang面试题汇总</span></a></li><li><a class="site-page child" href="/categories/%E6%80%9D%E8%80%83%E6%80%BB%E7%BB%93/LeetCode%E5%88%B7%E9%A2%98%E5%89%91%E6%8C%87Offer/"><i class="fa-fw iconfont icon-suanfa6"></i><span> LeetCode刷题剑指Offer</span></a></li><li><a class="site-page child" href="/categories/ACwing%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/"><i class="fa-fw iconfont icon-suanfa"></i><span> ACwing算法笔记</span></a></li><li><a class="site-page child" href="/categories/%E6%80%9D%E8%80%83%E6%80%BB%E7%BB%93/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/"><i class="fa-fw iconfont icon-kejichuangye"></i><span> 面试准备</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw iconfont icon-heike1"></i><span> 微笔记</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/Golang/Golang%E5%AD%A6%E4%B9%A0/"><i class="fa-fw iconfont icon-icon-golang"></i><span> Golang学习</span></a></li><li><a class="site-page child" href="/categories/%E4%BA%91%E5%8E%9F%E7%94%9F-%E5%88%86%E5%B8%83%E5%BC%8F-%E5%BE%AE%E6%9C%8D%E5%8A%A1/"><span> 云原生-分布式-微服务</span></a></li><li><a class="site-page child" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93andNosql%E6%95%B0%E6%8D%AE%E5%BA%93andLinux%E8%BF%90%E7%BB%B4/"><i class="fa-fw iconfont icon-ziyuan"></i><span> 数据库+Nosql数据库+Linux运维</span></a></li><li><a class="site-page child" href="/categories/KaliLinux/Kali%E6%B8%97%E9%80%8F%E7%AC%94%E8%AE%B0/"><i class="fa-fw iconfont icon-heike4"></i><span> Kali渗透笔记</span></a></li><li><a class="site-page child" href="/categories/PHP%E5%AD%A6%E4%B9%A0/"><i class="fa-fw iconfont icon-php"></i><span> PHP学习</span></a></li><li><a class="site-page child" href="/categories/365%E7%AE%97%E6%B3%95%E7%89%B9%E8%AE%AD%E8%90%A5/"><i class="fa-fw iconfont icon-suanfa1"></i><span> 365算法特训营</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw iconfont icon-a-golangicon"></i><span> 微项目</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/Golang/Go%E8%AF%AD%E8%A8%80%E5%AE%9E%E6%88%98%E6%B5%81%E5%AA%92%E4%BD%93%E8%A7%86%E9%A2%91%E7%BD%91%E7%AB%99/"><i class="fa-fw iconfont icon-liumeiti"></i><span> Go语言实战流媒体视频网站</span></a></li><li><a class="site-page child" href="/categories/Golang/Go%E7%89%88%E7%88%AC%E8%99%AB/"><i class="fa-fw iconfont icon-shentouceshi"></i><span> Go版爬虫</span></a></li><li><a class="site-page child" href="/categories/Golang/Go%E5%AE%9E%E6%88%98%E4%BB%BF%E7%99%BE%E5%BA%A6%E4%BA%91%E7%9B%98%20%E5%AE%9E%E7%8E%B0%E4%BC%81%E4%B8%9A%E7%BA%A7%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%91%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F/"><i class="fa-fw iconfont icon-fenbushicunchu1"></i><span> Go实战仿百度云盘 实现企业级分布式云存储系统</span></a></li><li><a class="site-page child" href="/categories/Golang/%E5%9F%BA%E4%BA%8EGolang%E5%8D%8F%E7%A8%8B%E5%AE%9E%E7%8E%B0%E6%B5%81%E9%87%8F%E7%BB%9F%E8%AE%A1%E7%B3%BB%E7%BB%9F/"><i class="fa-fw iconfont icon-liuliangtongji1"></i><span> 基于Golang协程实现流量统计系统</span></a></li><li><a class="site-page child" href="/categories/Golang/%E5%85%A8%E6%B5%81%E7%A8%8B%E5%BC%80%E5%8F%91%20GO%E5%AE%9E%E6%88%98%E7%94%B5%E5%95%86%E7%BD%91%E7%AB%99%E9%AB%98%E5%B9%B6%E5%8F%91%E7%A7%92%E6%9D%80%E7%B3%BB%E7%BB%9F/"><i class="fa-fw iconfont icon-gaobingfaxitong"></i><span> 全流程开发 GO实战电商网站高并发秒杀系统</span></a></li><li><a class="site-page child" href="/categories/Golang/Zinx--Golang%E8%BD%BB%E9%87%8F%E7%BA%A7%E6%9C%8D%E5%8A%A1%E5%99%A8/"><i class="fa-fw iconfont icon-fuwuqi1"></i><span> Zinx--Golang轻量级服务器</span></a></li><li><a class="site-page child" href="/categories/Golang/Docker+Kubernetes(k8s)%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%AE%B9%E5%99%A8%E5%8C%96%E5%AE%9E%E8%B7%B5/"><i class="fa-fw iconfont icon-bianzu18"></i><span> Docker+Kubernetes(k8s)微服务容器化实践</span></a></li><li><a class="site-page child" href="/categories/Golang/Go+%E5%8C%BA%E5%9D%97%E9%93%BE%E6%B7%B1%E5%BA%A6%E5%AE%9E%E6%88%98/"><i class="fa-fw iconfont icon-qukuailian2"></i><span> Go+区块链深度实战</span></a></li><li><a class="site-page child" href="/categories/Golang/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84%E5%AE%9E%E6%88%98160%E8%AE%B2/"><i class="fa-fw iconfont icon-weifuwu-copy"></i><span> 微服务架构实战160讲</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw iconfont icon-jishuzhuanyi"></i><span> 微底层</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/"><i class="fa-fw iconfont icon-suanfa1"></i><span> 汇编语言</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw iconfont icon-tongzhigonggao"></i><span> 微分类</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/shuoshuo/"><i class="fa-fw fas fa-comments"></i><span> 碎碎念</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw iconfont icon-xuesheng"></i><span> 我</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="fa-fw iconfont icon-wode"></i><span> 关于我</span></a></li><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> 微相册</span></a></li><li><a class="site-page child" href="/link/"><i class="fa-fw iconfont icon-youqinglianjie"></i><span> 网站</span></a></li><li><a class="site-page child" href="/messageboard/"><i class="fa-fw fas fa-paper-plane"></i><span> 留言板</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">赛 の 任意门</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 微首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw iconfont icon-xueshujiangzuo"></i><span> 微总结</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E6%80%9D%E8%80%83%E6%80%BB%E7%BB%93/Golang%E9%9D%A2%E8%AF%95%E9%A2%98%E6%95%B4%E7%90%86/"><i class="fa-fw iconfont icon-heiban"></i><span> Golang面试题汇总</span></a></li><li><a class="site-page child" href="/categories/%E6%80%9D%E8%80%83%E6%80%BB%E7%BB%93/LeetCode%E5%88%B7%E9%A2%98%E5%89%91%E6%8C%87Offer/"><i class="fa-fw iconfont icon-suanfa6"></i><span> LeetCode刷题剑指Offer</span></a></li><li><a class="site-page child" href="/categories/ACwing%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/"><i class="fa-fw iconfont icon-suanfa"></i><span> ACwing算法笔记</span></a></li><li><a class="site-page child" href="/categories/%E6%80%9D%E8%80%83%E6%80%BB%E7%BB%93/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/"><i class="fa-fw iconfont icon-kejichuangye"></i><span> 面试准备</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw iconfont icon-heike1"></i><span> 微笔记</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/Golang/Golang%E5%AD%A6%E4%B9%A0/"><i class="fa-fw iconfont icon-icon-golang"></i><span> Golang学习</span></a></li><li><a class="site-page child" href="/categories/%E4%BA%91%E5%8E%9F%E7%94%9F-%E5%88%86%E5%B8%83%E5%BC%8F-%E5%BE%AE%E6%9C%8D%E5%8A%A1/"><span> 云原生-分布式-微服务</span></a></li><li><a class="site-page child" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93andNosql%E6%95%B0%E6%8D%AE%E5%BA%93andLinux%E8%BF%90%E7%BB%B4/"><i class="fa-fw iconfont icon-ziyuan"></i><span> 数据库+Nosql数据库+Linux运维</span></a></li><li><a class="site-page child" href="/categories/KaliLinux/Kali%E6%B8%97%E9%80%8F%E7%AC%94%E8%AE%B0/"><i class="fa-fw iconfont icon-heike4"></i><span> Kali渗透笔记</span></a></li><li><a class="site-page child" href="/categories/PHP%E5%AD%A6%E4%B9%A0/"><i class="fa-fw iconfont icon-php"></i><span> PHP学习</span></a></li><li><a class="site-page child" href="/categories/365%E7%AE%97%E6%B3%95%E7%89%B9%E8%AE%AD%E8%90%A5/"><i class="fa-fw iconfont icon-suanfa1"></i><span> 365算法特训营</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw iconfont icon-a-golangicon"></i><span> 微项目</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/Golang/Go%E8%AF%AD%E8%A8%80%E5%AE%9E%E6%88%98%E6%B5%81%E5%AA%92%E4%BD%93%E8%A7%86%E9%A2%91%E7%BD%91%E7%AB%99/"><i class="fa-fw iconfont icon-liumeiti"></i><span> Go语言实战流媒体视频网站</span></a></li><li><a class="site-page child" href="/categories/Golang/Go%E7%89%88%E7%88%AC%E8%99%AB/"><i class="fa-fw iconfont icon-shentouceshi"></i><span> Go版爬虫</span></a></li><li><a class="site-page child" href="/categories/Golang/Go%E5%AE%9E%E6%88%98%E4%BB%BF%E7%99%BE%E5%BA%A6%E4%BA%91%E7%9B%98%20%E5%AE%9E%E7%8E%B0%E4%BC%81%E4%B8%9A%E7%BA%A7%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%91%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F/"><i class="fa-fw iconfont icon-fenbushicunchu1"></i><span> Go实战仿百度云盘 实现企业级分布式云存储系统</span></a></li><li><a class="site-page child" href="/categories/Golang/%E5%9F%BA%E4%BA%8EGolang%E5%8D%8F%E7%A8%8B%E5%AE%9E%E7%8E%B0%E6%B5%81%E9%87%8F%E7%BB%9F%E8%AE%A1%E7%B3%BB%E7%BB%9F/"><i class="fa-fw iconfont icon-liuliangtongji1"></i><span> 基于Golang协程实现流量统计系统</span></a></li><li><a class="site-page child" href="/categories/Golang/%E5%85%A8%E6%B5%81%E7%A8%8B%E5%BC%80%E5%8F%91%20GO%E5%AE%9E%E6%88%98%E7%94%B5%E5%95%86%E7%BD%91%E7%AB%99%E9%AB%98%E5%B9%B6%E5%8F%91%E7%A7%92%E6%9D%80%E7%B3%BB%E7%BB%9F/"><i class="fa-fw iconfont icon-gaobingfaxitong"></i><span> 全流程开发 GO实战电商网站高并发秒杀系统</span></a></li><li><a class="site-page child" href="/categories/Golang/Zinx--Golang%E8%BD%BB%E9%87%8F%E7%BA%A7%E6%9C%8D%E5%8A%A1%E5%99%A8/"><i class="fa-fw iconfont icon-fuwuqi1"></i><span> Zinx--Golang轻量级服务器</span></a></li><li><a class="site-page child" href="/categories/Golang/Docker+Kubernetes(k8s)%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%AE%B9%E5%99%A8%E5%8C%96%E5%AE%9E%E8%B7%B5/"><i class="fa-fw iconfont icon-bianzu18"></i><span> Docker+Kubernetes(k8s)微服务容器化实践</span></a></li><li><a class="site-page child" href="/categories/Golang/Go+%E5%8C%BA%E5%9D%97%E9%93%BE%E6%B7%B1%E5%BA%A6%E5%AE%9E%E6%88%98/"><i class="fa-fw iconfont icon-qukuailian2"></i><span> Go+区块链深度实战</span></a></li><li><a class="site-page child" href="/categories/Golang/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84%E5%AE%9E%E6%88%98160%E8%AE%B2/"><i class="fa-fw iconfont icon-weifuwu-copy"></i><span> 微服务架构实战160讲</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw iconfont icon-jishuzhuanyi"></i><span> 微底层</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/"><i class="fa-fw iconfont icon-suanfa1"></i><span> 汇编语言</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw iconfont icon-tongzhigonggao"></i><span> 微分类</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/shuoshuo/"><i class="fa-fw fas fa-comments"></i><span> 碎碎念</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw iconfont icon-xuesheng"></i><span> 我</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="fa-fw iconfont icon-wode"></i><span> 关于我</span></a></li><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> 微相册</span></a></li><li><a class="site-page child" href="/link/"><i class="fa-fw iconfont icon-youqinglianjie"></i><span> 网站</span></a></li><li><a class="site-page child" href="/messageboard/"><i class="fa-fw fas fa-paper-plane"></i><span> 留言板</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">PHP学习1：环境搭建</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-09-02T16:13:56.000Z" title="发表于 2021-09-03 00:13:56">2021-09-03</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-09-19T02:14:00.449Z" title="更新于 2021-09-19 10:14:00">2021-09-19</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/PHP%E5%AD%A6%E4%B9%A0/">PHP学习</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>8分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="PHP学习1：环境搭建"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div><article class="post-content" id="article-container"><h2 id="一、WAMP介绍"><a href="#一、WAMP介绍" class="headerlink" title="一、WAMP介绍"></a>一、WAMP介绍</h2><p>Windows下的Apache+Mysql/MariaDB+Perl/PHP/Python，一组常用来搭建动态网站或者服务器的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/开源软件/8105369">开源软件</a>，本身都是各自独立的程序，但是因为常被放在一起使用，拥有了越来越高的兼容度，共同组成了一个强大的Web应用程序平台。随着开源潮流的蓬勃发展，<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/开放源代码/114160">开放源代码</a>的LAMP已经与J2EE和.Net<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/商业软件/3528488">商业软件</a>形成三足鼎立之势，并且该软件开发的项目在软件方面的投资成本较低，因此受到整个IT界的关注。LAMP是基于Linux，Apache，MySQL/MariaDB和PHP的开放资源网络开发平台，PHP是一种有时候用Perl或Python可代替的编程语言。这个术语来自欧洲，在那里这些程序常用来作为一种标准开发环境。名字来源于每个程序的第一个字母。每个程序在所有权里都符合开放源代码标准：Linux是开放系统；Apache是最通用的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/网络服务器/99096">网络服务器</a>；mySQL是带有基于网络管理附加工具的关系数据库；PHP是流行的对象<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/脚本语言/1379708">脚本语言</a>，它包含了多数其它语言的优秀特征来使得它的网络开发更加有效。开发者在Windows操作系统下使用这些Linux环境里的工具称为使用WAMP。</p>
+<h2 id="二、环境搭建"><a href="#二、环境搭建" class="headerlink" title="二、环境搭建"></a>二、环境搭建</h2><p>刚开始学习搭建安装一个简易集成环境WampServer</p>
+<p>WampServer 　Wamp就是Windows Apache Mysql PHP集成安装环境，即在window下的apache、php和mysql的服务器软件。PHP扩展、Apache模块，开启/关闭鼠标点点就搞定，再也不用亲自去修改配置文件了，WAMP它会去做。再也不用到处询问php的安装问题了，WAMP一切都搞定了，这个软件在win平台上使用的较多。</p>
+<div class="note info modern"><p><a target="_blank" rel="noopener" href="https://sourceforge.net/projects/wampserver/">WampServer下载链接地址</a></p>
+</div>
+<h3 id="开始安装"><a href="#开始安装" class="headerlink" title="开始安装"></a>开始安装</h3><p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://cdn.jsdelivr.net/gh/sailaoda/sai_img//img/nowimage-20210903002457222.png" alt="安装过程"></p>
+<h3 id="安装过程的问题"><a href="#安装过程的问题" class="headerlink" title="安装过程的问题"></a>安装过程的问题</h3><h4 id="安装时缺少VCRUNTIME140-dll"><a href="#安装时缺少VCRUNTIME140-dll" class="headerlink" title="安装时缺少VCRUNTIME140.dll"></a>安装时缺少VCRUNTIME140.dll</h4><p>　　官方给的提示：</p>
+<p>　　— Visual C++ Packages —</p>
+<p>　　The MSVC runtime libraries VC9, VC10, VC11 are required for Wampserver 2.4, 2.5 and 3.0, even if you use only Apache and PHP versions with VC11. Runtimes VC13, VC14 is required for PHP 7 and Apache 2.4.17</p>
+<p>　　– VC9 Packages (Visual C++ 2008 SP1)</p>
+<p>　　<a target="_blank" rel="noopener" href="http://www.microsoft.com/en-us/download/details.aspx?id=5582">http://www.microsoft.com/en-us/download/details.aspx?id=5582</a></p>
+<p>　　<a target="_blank" rel="noopener" href="http://www.microsoft.com/en-us/download/details.aspx?id=2092">http://www.microsoft.com/en-us/download/details.aspx?id=2092</a></p>
+<p>　　– VC10 Packages (Visual C++ 2010 SP1)</p>
+<p>　　<a target="_blank" rel="noopener" href="http://www.microsoft.com/en-us/download/details.aspx?id=8328">http://www.microsoft.com/en-us/download/details.aspx?id=8328</a></p>
+<p>　　<a target="_blank" rel="noopener" href="http://www.microsoft.com/en-us/download/details.aspx?id=13523">http://www.microsoft.com/en-us/download/details.aspx?id=13523</a></p>
+<p>　　<strong>– VC11 Packages (Visual C++ 2012 Update 4)</strong></p>
+<p>　　The two files VSU4vcredist_x86.exe and VSU4vcredist_x64.exe to be download are on the same page: <a target="_blank" rel="noopener" href="http://www.microsoft.com/en-us/download/details.aspx?id=30679">http://www.microsoft.com/en-us/download/details.aspx?id=30679</a></p>
+<p>　　– VC13 Packages] (Visual C++ 2013[)</p>
+<p>　　The two files VSU4vcredist_x86.exe and VSU4vcredist_x64.exe to be download are on the same page: <a target="_blank" rel="noopener" href="https://www.microsoft.com/en-us/download/details.aspx?id=40784">https://www.microsoft.com/en-us/download/details.aspx?id=40784</a></p>
+<p>　　– VC14 Packages (Visual C++ 2015)</p>
+<p>　　The two files vcredist_x86.exe and vcredist_x64.exe to be download are on the same page:</p>
+<p>　　<a target="_blank" rel="noopener" href="http://www.microsoft.com/fr-fr/download/details.aspx?id=48145">http://www.microsoft.com/fr-fr/download/details.aspx?id=48145</a></p>
+<p>　　If you have a 64-bit Windows, you must install both 32 and 64bit versions, even if you do not use Wampserver 64 bit.</p>
+<p>　　不同版本对应的The MSVC runtime libraries也不一样。建议安装全了，要不会报错误(32bit 和 64bit 全都安装)。</p>
+<p>报错缺失MSVCR120.ddl时，下载</p>
+<p><a target="_blank" rel="noopener" href="https://www.microsoft.com/en-us/download/details.aspx?id=40784">https://www.microsoft.com/en-us/download/details.aspx?id=40784</a></p>
+<p>报错缺失MSVCR110.ddl时，下载</p>
+<p> <a target="_blank" rel="noopener" href="http://www.microsoft.com/zh-cn/download/details.aspx?id=30679">http://www.microsoft.com/zh-cn/download/details.aspx?id=30679</a></p>
+<h2 id="三、环境配置"><a href="#三、环境配置" class="headerlink" title="三、环境配置"></a>三、环境配置</h2><ul>
+<li>WampServer</li>
+</ul>
+<p>安装完之后屏幕右下角就会出来一个标记![WampServer 64位]<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://cdn.jsdelivr.net/gh/sailaoda/sai_img//img/nowimage-20210903003242401.png" alt="image-20210903003242401">，你右键单击，然后依次选择Language—Chinese，</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://cdn.jsdelivr.net/gh/sailaoda/sai_img//img/now80cfc1efc0fb931b4fb982373207e870.jpg" alt="WampServer 64位" style="zoom:67%;" /></p>
+<ul>
+<li>MySQL以及PhpMyAdmin的配置</li>
+</ul>
+<p>​    单独安装过MySQL的朋友们肯定会发现一个问题，以前安装MySQL的时候是需要配置一个root的密码的，可是安装wampserver的时候，至始至终都没有配置密码的步骤，那岂不是MySQL为空密码了？答案是肯定的，确实是空密码。这样岂不是很不安全？非常对，所以我们要修改密码</p>
+<p>​    1、左键点击，选择“phpMyAdmin”，就会打开phpMyAdmin的管理页面，点击右上方的“权限”，一般情况下会出现如图所示的表格，我们要做的就是点击每一行用户名为root的右边的。</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="http://src.onlinedown.net/d/file/p/2017-11-14/cf7c62543e4114b75df7ff81799b1c00.jpg" alt="WampServer 64位" style="zoom:80%;" /></p>
+<p>​    2、点击后，找到如图二所示的修改密码区域，填入欲修改的密码，再点击右下方的执行，片刻之后上方就会出现修改成功的提示，每一个root用户均需要做此操作，如果一时半会想不到一个好的密码，也可以使用“生成密码”功能生成一个随机的密码，但是这个密码一定要记住，忘记了麻烦可就大了。</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://cdn.jsdelivr.net/gh/sailaoda/sai_img//img/now4a72c367562a3bb4c065ef92dbf74a38.jpg" alt="WampServer 64位" style="zoom:80%;" /></p>
+<p>​    备注：修改密码后可以看到 对应账户 密码栏 由原来的“否”变为“是”，如上图 <a target="_blank" rel="noopener" href="http://www.onlinedown.net/soft/262731.htm">绿色</a>圈出部分。那么添加新用户（接下来会详细讲到）、删除用户 如 上图红色标出部分即可完成操作！</p>
+<p>​    3、做完上述操作之后重启一下MySQL服务，然后刷<a target="_blank" rel="noopener" href="http://www.onlinedown.net/soft/88695.htm">新页</a>面，大家就会发现出现了如图所示的错误，这是为什么呢？</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://cdn.jsdelivr.net/gh/sailaoda/sai_img//img/nowac6c5869af807e5be40d0fb95a1168f5.jpg" alt="WampServer 64位" style="zoom:80%;" /></p>
+<p>​    是因为刚才我们修改了MySQL的密码，但是没有修改phpMyAdmin与MySQL通讯的密码，怎么改呢？打开wampserver安装目录，然后依次打开wampappsphpmyadmin3.3.9，用记事本或者DW软件打开里面的config.inc.php，找到“$cfg[‘Servers’][$i][‘password’] = ‘’;”，在最后的两个单引号里面输入刚才修改的那个密码，然后保存，操作完毕之后再刷新一下phpMyAdmin的页面，是不是<a target="_blank" rel="noopener" href="http://www.onlinedown.net/soft/288759.htm">恢复</a>正常了呢？</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="http://src.onlinedown.net/d/file/p/2017-11-14/2045afd52e74b5825f506392f6116a99.jpg" alt="WampServer 64位"></p>
+<p>​    4、做完了上面的配置之后，我们需要给MySQL数据库创建一个用户以及用户对应的数据库，同样，点击右上方的权限按钮，找到中间偏下面的一个“添加新用户”链接，按照图示的方法创建一个用户以及对应的数据库，并赋予单个数据库管理权限，下面的资源限制则是按照实际情况填写就可以了，一般自用的情况下那个区域是可以保留默认的，最后再点击右下角的“执行”按钮，相应的用户以及数据库就创建好了。</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="http://src.onlinedown.net/d/file/p/2017-11-14/cc72401dbd73ece13dee46eb8bca5e1e.jpg" alt="WampServer 64位" style="zoom:67%;" /></p>
+<ul>
+<li>Apache的配置</li>
+</ul>
+<p>​    虽说wampserver已经帮我们集成好了Apache，但是有些细节的东西还是需要我们自己去完善的，下面就让我们来一一对wampserver自带的Apache进行完善。</p>
+<p>​    1、刚装完wampserver之后，有没有性子比较急的朋友们可能会尝试通过外网访问我们配置好的wampserver服务器，但是会发现通过外网访问会提示权限不够，这是为什么呢？是因为wampserver默认是只允许127.0.0.1访问的，也就是只允许本机访问，怎么修改呢？依次点击—Apache—httpd.conf，找到如图所示的地方，大概在第234行，把“Deny from all”删掉，再把“Allow from 127.0.0.1”改成“Allow from all”，就可以了。</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://cdn.jsdelivr.net/gh/sailaoda/sai_img//img/now875d573c07e5567113a792108dd912e7.jpg" alt="WampServer 64位"></p>
+<p>​    2、继续搜索，找到如图所示的两个地方（分别在大约第190行和第225行），分别把“AllowOverride None”改成“AllowOverride  All”（这一步操作是针对使用了URL重写功能的朋友，如果没有用到的话这步建议不要做修改，因为改了这个之后Apache的安全性会略微有所下降。）</p>
+<p>​    3、开启URL重写功能，当然咯，如果大家觉得URL重写功能没有必要的话，这个可以直接无视，但是如果开了的话，上面的第二条就必须做一下了，否则很容易造成错误。按照上面的方法打开httpd.conf文件，找到#LoadModule rewrite_module  modules/mod_rewrite.so，然后把前面的“#”删掉，就可以了，当然咯，如果想要这个修改生效的话，还需要立即重启一下apache服务。</p>
+<p>​    4、相信大家还记得上面更改wampserver的“www  目录”指向路径的方法吧？我曾经说这个方法只是改了wamp中“www  目录”这个链接而已，那如果要真正修改，我们应该怎么改呢？很简单，打开httpd.conf，寻找“DocumentRoot”大概在第178行，把后面的值改成我们实际网站需要的路径，再寻找“<Directory "c:/wamp/www/">”，同样把后面的值改成我们网站存放的实际地址，就OK了。</p>
+<ul>
+<li><p>配置PHP</p>
+<p>php (超文本处理器)</p>
+<p>PHP的配置比较简单，只需要进行一些基本设置的修改就可以了，依次点击<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://cdn.jsdelivr.net/gh/sailaoda/sai_img//img/nowimage-20210903003806963.png" alt="WampServer 64位">—PHP—php.ini，找到这三个地方：short_open_tag = Off（是否允许使用 PHP 代码开始标志的缩写形式（&lt;? ?&gt; ）。)；</p>
+</li>
+</ul>
+<p>​    memory_limit = 128M（最大使用<a target="_blank" rel="noopener" href="http://www.onlinedown.net/soft/112455.htm">内存</a>的大小）；upload_max_filesize = 2M（上传附件的最大值），第一个需要改成on，否则的话很多php程序都会运行不了，后面的两项就按照大家的实际需求更改就行了。</p>
+<p>​    PHP也可以切换版本 PHP — PHP版本来切换PHP的语言版本。</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://cdn.jsdelivr.net/gh/sailaoda/sai_img//img/nowimage-20210903005106785.png" alt="WampServer-PHP-php.ini"></p>
+<h2 id="四、访问网站"><a href="#四、访问网站" class="headerlink" title="四、访问网站"></a>四、访问网站</h2><p>打开浏览器输入 localhost 或 127.0.0.1  (本机IP 地址)</p>
+<p>在www目录下面创建代码， PHP文件，例如localhost/1.php  进行访问</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://cdn.jsdelivr.net/gh/sailaoda/sai_img//img/nowimage-20210903005649747.png" alt="www文件夹下创建php代码文件"></p>
+<p>phpinfo();  显示所有的php 的信息</p>
+<p>他是模块化的，需要用什么就开启那个模块</p>
+<p>参考博客：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/hitwgs/p/8723142.html">https://www.cnblogs.com/hitwgs/p/8723142.html</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">hackerwu</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://hackerwu.cn/2021/09/03/PHP%E5%AD%A6%E4%B9%A01%EF%BC%9A%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">http://hackerwu.cn/2021/09/03/PHP%E5%AD%A6%E4%B9%A01%EF%BC%9A%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://hackerwu.cn" target="_blank">赛 の 任意门</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/PHP/">PHP</a></div><div class="post_share"><div class="social-share" data-image="/img/cover/php1.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button button--animated"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/donate/wechat.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/donate/wechat.jpg" alt="微信金库"/></a><div class="post-qr-code-desc">微信金库</div></li><li class="reward-item"><a href="/img/donate/alipay.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/donate/alipay.jpg" alt="支付宝钱庄"/></a><div class="post-qr-code-desc">支付宝钱庄</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/09/02/ACwing%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0%E4%BA%8C%EF%BC%9A%E6%95%B4%E6%95%B0%E4%BA%8C%E5%88%86%EF%BC%8C%E6%B5%AE%E7%82%B9%E6%95%B0%E4%BA%8C%E5%88%86/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/cover/laptop.png" onerror="onerror=null;src='/img/error.gif'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">ACwing算法笔记二：整数二分，浮点数二分</div></div></a></div><div class="next-post pull-right"><a href="/2021/09/03/PHP%E5%AD%A6%E4%B9%A02%EF%BC%9Aphp%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F/"><img class="next-cover" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/cover/php1.png" onerror="onerror=null;src='/img/error.gif'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">PHP学习2：PHP文件格式</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2021/09/03/PHP学习2：php文件格式/" title="PHP学习2：PHP文件格式"><img class="cover" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/cover/php1.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-09-03</div><div class="title">PHP学习2：PHP文件格式</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div id="comment-switch"><span class="first-comment">Valine</span><span class="switch-btn"></span><span class="second-comment">Gitalk</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81WAMP%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">一、WAMP介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="toc-number">2.</span> <span class="toc-text">二、环境搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B%E5%AE%89%E8%A3%85"><span class="toc-number">2.1.</span> <span class="toc-text">开始安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">2.2.</span> <span class="toc-text">安装过程的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%97%B6%E7%BC%BA%E5%B0%91VCRUNTIME140-dll"><span class="toc-number">2.2.1.</span> <span class="toc-text">安装时缺少VCRUNTIME140.dll</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="toc-number">3.</span> <span class="toc-text">三、环境配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E8%AE%BF%E9%97%AE%E7%BD%91%E7%AB%99"><span class="toc-number">4.</span> <span class="toc-text">四、访问网站</span></a></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2021 By hackerwu</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">欢迎客官来到江湖小站！</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>if (document.getElementsByClassName('mermaid').length) {
+  if (window.mermaidJsLoad) mermaid.init()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(() => {
+      window.mermaidJsLoad = true
+      mermaid.initialize({
+        theme: 'neutral',
+      })
+      true && mermaid.init()
+    })
+  }
+}</script><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'rJxKwWVsRPGJAuJwGPrOc9s7-gzGzoHsz',
+      appKey: 'JEiKrmJvInDI0vxeyvPcDLvn',
+      placeholder: '这位公子/姑娘有什么要对在下说的吗？',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: false,
+      serverURLs: 'https://hackerwu.cn',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: true,
+      path: window.location.pathname,
+      requiredFields: ["nick,mail"],
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script>function addGitalkSource () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= 'https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+}
+
+function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk(Object.assign({
+      clientID: '38e76c2916fc41fe88f7',
+      clientSecret: '1c64c79be0bc590d3a5e52c5d6f11abf2765b36e',
+      repo: 'sailaoda.github.io',
+      owner: 'sailaoda',
+      admin: ['sailaoda'],
+      id: 'b290c2983f9cf02d6a694a6eb4918b8c',
+      language: 'zh-CN',
+      perPage: 10,
+      distractionFreeMode: false,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      updateCountCallback: commentCount
+    },false))
+
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    addGitalkSource()
+    getScript('https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Valine' === 'Gitalk' || !true) {
+  if (true) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script></div><script src="/js/randombg.js"></script><script async src="/js/diytitle.js"></script><script src="/js/cursor.js"></scropt><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js" data-mobile="true" data-text="吃饭,睡觉,学技术,Golang,搞算法" data-fontsize="15px" data-random="true" async="async"></script><script src="//code.tidio.co/cnbgzsgyy85dcz1vwlr5qo0sy2ijojti.js" async="async"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config-diff',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"]):not([href="/shuoshuo/"]):not([href="/about/"]):not([href="pangu"]):not([href="Gitalk"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: true,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.removeEventListener('scroll', window.tocScrollFn)
+  window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', 'G-5EKRNM989R', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script data-pjax>
+                        function butterfly_swiper_injector_config(){
+                          var parent_div_git = document.getElementById('recent-posts');
+                          var item_html = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2021/09/22/1-Golang-面试题整理/" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/cover/mianshi.png" alt=""/></a><div class="blog-slider__content"><span class="blog-slider__code">2021-09-22</span><a class="blog-slider__title" href="2021/09/22/1-Golang-面试题整理/" alt="">Golang 面试题整理</a><div class="blog-slider__text">Golang面试题整理</div><a class="blog-slider__button" href="2021/09/22/1-Golang-面试题整理/" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2021/09/15/go语言实战流媒体视频网站笔记2：一个例子了解golang工具链/" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/cover/goliu.jpg" alt=""/></a><div class="blog-slider__content"><span class="blog-slider__code">2021-09-15</span><a class="blog-slider__title" href="2021/09/15/go语言实战流媒体视频网站笔记2：一个例子了解golang工具链/" alt="">Go语言实战流媒体视频网站笔记2：一个例子了解Golang工具链</a><div class="blog-slider__text">通过一个简单的webservice具体从Golang的工具链，到test，全面介绍Golang在工程项目里需要掌握的知识点。</div><a class="blog-slider__button" href="2021/09/15/go语言实战流媒体视频网站笔记2：一个例子了解golang工具链/" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2021/08/20/安装nvm后无npm导致无法安装gitbook解决办法/" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/cover/3.png" alt=""/></a><div class="blog-slider__content"><span class="blog-slider__code">2021-08-20</span><a class="blog-slider__title" href="2021/08/20/安装nvm后无npm导致无法安装gitbook解决办法/" alt="">安装nvm后无npm导致无法安装GitBook解决办法</a><div class="blog-slider__text">nvm里面node版本导致的一系列问题，基本上都在这里了。</div><a class="blog-slider__button" href="2021/08/20/安装nvm后无npm导致无法安装gitbook解决办法/" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2021/10/07/1-启动LeetCode刷题计划/" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/cover/leetcode.png" alt=""/></a><div class="blog-slider__content"><span class="blog-slider__code">2021-10-07</span><a class="blog-slider__title" href="2021/10/07/1-启动LeetCode刷题计划/" alt="">LeetCode刷题剑指Offer</a><div class="blog-slider__text">剑指Offer计划</div><a class="blog-slider__button" href="2021/10/07/1-启动LeetCode刷题计划/" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2021/09/13/go语言学习笔记9：面向对象-上）/" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="img/cover/go.jpg" alt=""/></a><div class="blog-slider__content"><span class="blog-slider__code">2021-09-13</span><a class="blog-slider__title" href="2021/09/13/go语言学习笔记9：面向对象-上）/" alt="">Golang学习笔记9：面向对象(上）</a><div class="blog-slider__text">Golang的面向对象特性</div><a class="blog-slider__button" href="2021/09/13/go语言学习笔记9：面向对象-上）/" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2021/09/22/1-ACwing题库刷题/" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/cover/laptop.png" alt=""/></a><div class="blog-slider__content"><span class="blog-slider__code">2021-09-22</span><a class="blog-slider__title" href="2021/09/22/1-ACwing题库刷题/" alt="">ACwing题库刷题</a><div class="blog-slider__text">ACwing刷题总结</div><a class="blog-slider__button" href="2021/09/22/1-ACwing题库刷题/" alt="">详情   </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+                          console.log('已挂载butterfly_swiper')
+                          // parent_div_git.innerHTML=item_html+parent_div_git.innerHTML // 无报错，但不影响使用(支持pjax跳转)
+                          parent_div_git.insertAdjacentHTML("afterbegin",item_html) // 有报错，但不影响使用(支持pjax跳转)
+                          }
+                        if( document.getElementById('recent-posts') && (location.pathname ==='all'|| 'all' ==='all')){
+                        butterfly_swiper_injector_config()
+                        }
+                      </script><script defer src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.6/js/swiper.min.js"></script><script defer data-pjax src="https://cdn.jsdelivr.net/npm/hexo-butterfly-swiper/lib/swiper_init.js"></script><script data-pjax src="https://cdn.jsdelivr.net/npm/hexo-filter-gitcalendar/lib/gitcalendar.js"></script><script data-pjax>
+                        function gitcalendar_injector_config(){
+                          var parent_div_git = document.getElementById('recent-posts');
+                          var item_html = '<div class="recent-post-item" style="width:100%;height:auto;padding:10px;"><style>#git_container{min-height: 280px}@media screen and (max-width:650px) {#git_container{min-height: 0px}}</style><div id="git_loading" style="width:10%;height:100%;margin:0 auto;display: block;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animatetransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animatetransform></path></svg><style>#git_container{display: none;}</style></div><div id="git_container"></div></div>';
+                          parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+                          console.log('已挂载gitcalendar')
+                          }
+
+                        if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+                            gitcalendar_injector_config()
+                            GitCalendarInit("https://gitcalendar.akilar.top/api?sailaoda",['#ebedf0', '#fdcdec', '#fc9bd9', '#fa6ac5', '#f838b2', '#f5089f', '#c4067e', '#92055e', '#540336', '#48022f', '#30021f'],'sailaoda')
+                        }
+                      </script><script async src="https://at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/01/assets/haru01.model.json"},"display":{"superSample":2,"position":"left","width":200,"height":400,"hOffset":0,"vOffset":0},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2,"opacity":0.95},"dialog":{"enable":false,"hitokoto":true},"log":false});</script></body></html>
