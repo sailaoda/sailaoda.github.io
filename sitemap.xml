@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://hackerwu.cn/2021/10/21/Rob%E8%B0%88Golang/</loc>
+    
+    <lastmod>2021-10-21</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://hackerwu.cn/2021/10/17/CentOS8%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AERedis/</loc>
     
     <lastmod>2021-10-21</lastmod>
@@ -585,20 +592,6 @@
   </url>
   
   <url>
-    <loc>http://hackerwu.cn/tags/npm/</loc>
-    <lastmod>2021-10-21</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://hackerwu.cn/tags/nvm/</loc>
-    <lastmod>2021-10-21</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://hackerwu.cn/tags/Linux/</loc>
     <lastmod>2021-10-21</lastmod>
     <changefreq>daily</changefreq>
@@ -607,6 +600,20 @@
   
   <url>
     <loc>http://hackerwu.cn/tags/Ubuntu/</loc>
+    <lastmod>2021-10-21</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://hackerwu.cn/tags/npm/</loc>
+    <lastmod>2021-10-21</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://hackerwu.cn/tags/nvm/</loc>
     <lastmod>2021-10-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -713,7 +720,7 @@
   </url>
   
   <url>
-    <loc>http://hackerwu.cn/categories/npm/</loc>
+    <loc>http://hackerwu.cn/categories/Linux/</loc>
     <lastmod>2021-10-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -727,7 +734,7 @@
   </url>
   
   <url>
-    <loc>http://hackerwu.cn/categories/Linux/</loc>
+    <loc>http://hackerwu.cn/categories/npm/</loc>
     <lastmod>2021-10-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
