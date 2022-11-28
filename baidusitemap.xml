@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://hackerwu.cn/2022/11/28/Rust%E7%8C%9C%E6%95%B0%E5%AD%97%E6%B8%B8%E6%88%8F/</loc>
+    <lastmod>2022-11-28</lastmod>
+  </url>
+  <url>
     <loc>http://hackerwu.cn/2022/09/22/Neo4j%E5%9B%BE%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BD%BF%E7%94%A8/</loc>
     <lastmod>2022-11-15</lastmod>
   </url>
