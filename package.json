@@ -17,7 +17,7 @@
     "hexo-deployer-git": "^3.0.0",
     "hexo-deployer-heroku": "^0.1.2",
     "hexo-deployer-openshift": "^0.1.2",
-    "hexo-deployer-rsync": "^1.0.0",
+    "hexo-deployer-rsync": "^2.0.0",
     "hexo-filter-nofollow": "^2.0.2",
     "hexo-fs": "^3.1.0",
     "hexo-generator-archive": "^1.0.0",
